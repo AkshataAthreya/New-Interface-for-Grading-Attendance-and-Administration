@@ -26,5 +26,20 @@ function updateSections() {
     }
 }
 
+// Add this to your batches.js file
+function selectSubject(subject) {
+    document.getElementById('selected-subject').value = subject;
+    // Optional: Add visual feedback
+    const buttons = document.querySelectorAll('.btn-outline-secondary');
+    buttons.forEach(button => {
+        if (button.textContent === subject) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+
 // Add event listener to batch select dropdown
 document.getElementById('batch-select').addEventListener('change', updateSections);
